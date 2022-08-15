@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.main {
+  flex: 1;
+  height: 47em;
+  padding: 20px 0 20px 0;
+}
+
+h2, h1 {
+  color: #93ad19;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #93ad19;
+}
+
+.link {
+  text-decoration: none;
+  color: #93ad19;
+  font-weight: 700;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 0.4em;
+}
+
+.title {
+  border: none;
+}
+
+.link:hover {
+  color: #708611;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  align-self: center;
+  margin: 3em auto;
+}
+
+.input-container {
+  width: 49%;
+}
+.address {
+  width: 49%;
+  border: #93ad19;
+  border-style: solid;
+  border-radius: 0.5em;
+  align-self: flex-end;
+}
+
+.address > .input-wrapper {
+  width: 70%;
+  margin: 1em auto;
+}
+
+
+.save-button {
+  display: block;
+  width: 8%;
+  padding: 0.9em;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 3em auto;
+  background-color: #93ad19;
+  color: white;
+  border: #93ad19;
+  border-radius: 5px;
+}
+
+.save-button:hover {
+  background-color: #708611;
+  cursor: pointer;
+}
+
+.sign-in-content {
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px;
+  margin: 1.5em auto;
+  padding: 2em;
+}
+
+.sign-in-icon {
+  font-size: 1em;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 1em auto;
+  width: 80%;
+}
+
+.input-wrapper label {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.input-wrapper input,
+select {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.form-inputs {
+  display: flex;
+  justify-content: center;
+}
