@@ -50,6 +50,8 @@ export default function EmployeesArray(index) {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+    console.log(employees)
+
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
