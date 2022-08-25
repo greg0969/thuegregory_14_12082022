@@ -12,7 +12,7 @@ function CreateEmployee() {
         <div>
             <Header />
             <Form visible={visible} setVisible={setVisible} />
-            {/* <ConfirmModal visible={visible} setVisible={setVisible}  /> */}
+            {visible === true &&<ConfirmModal setVisible={setVisible}  />}
         </div>
     )
 }

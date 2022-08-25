@@ -6,18 +6,20 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
+// import MenuItem from "@mui/material/MenuItem";
 import states from "../data/states.json";
 import departments from "../data/departments.json";
+import ListItem from "./ListItem";
+import { MenuItem } from "@mui/material";
 
 
-function Form({ visible, setVisible, index }) {
+function Form({setVisible, index }) {
   const dispatch = useDispatch();
   const [employee, setEmployee] = useState([]);
-  
 
   function handleChange(event) {
     const { name, value } = event.target;
+    
     setEmployee({ ...employee, [name]: value });
   }
 
@@ -30,12 +32,12 @@ function Form({ visible, setVisible, index }) {
     setVisible(true);
     dispatch(addEmployee(data));
   }
-
   let date = new Date().toISOString().substr(0, 10);
 
   return (
     <Box
       id="form"
+      name="createEmployee"
       component="form"
       onSubmit={handleSubmit}
       sx={{ textAlign: "center", margin: "0 5rem" }}
@@ -72,24 +74,31 @@ function Form({ visible, setVisible, index }) {
             name="Birthdate"
             label="Date of Birth"
             onChange={handleChange}
-            value={employee.birthDate || "1970-01-01"}
+            value={employee.birthDate }
+            InputLabelProps={{
+              shrink: true,
+            }}
             required
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
-            type="date"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            type="date"    
             id="Start"
             name="Start"
-            label="Starting Date"
+            label="Starting Date"          
             onChange={handleChange}
-            value={employee.startDate || date}
+            value={employee.startDate}
             required
-          />
+
+        />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <TextField
+        <TextField
             fullWidth
             select
             id="department"
@@ -105,6 +114,7 @@ function Form({ visible, setVisible, index }) {
                 {department.name}
               </MenuItem>
             ))}
+            {/* <ListItem items={departments} setEmployee={setEmployee} employee={employee} /> */}
           </TextField>
         </Grid>
       </Grid>
@@ -133,7 +143,7 @@ function Form({ visible, setVisible, index }) {
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <TextField
+        <TextField
             fullWidth
             select
             id="State"
@@ -150,6 +160,7 @@ function Form({ visible, setVisible, index }) {
                 {state.name}
               </MenuItem>
             ))}
+            {/* <ListItem items={states} setEmployee={setEmployee} employee={employee} /> */}
           </TextField>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -165,9 +176,10 @@ function Form({ visible, setVisible, index }) {
       </Grid>
 
       <Button
+              
         type="submit"
         variant="contained"
-        sx={{ margin: "2rem auto", width: "250px", backgroundColor:'#93ad19', fontWeight:"bold" }}
+        sx={{ margin: "2rem auto", width: "250px", backgroundColor: '#93ad19', fontWeight: "bold" }}
       >
         Create Employee
       </Button>

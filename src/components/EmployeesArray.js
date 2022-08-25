@@ -15,7 +15,7 @@ export default function EmployeesArray(index) {
     const employees = useSelector((state) => state.employees.employee);
 
     const columns = [
-        { id: 'FirstName', label: 'FirstName', minWidth: 170 },
+        { id: 'FirstName', label: 'FirstName', minWidth: 100 },
         { id: 'LastName', label: 'LastName', minWidth: 100 },
         { id: 'Start Date', label: 'Start', minWidth: 100 },
         { id: 'Department', label: 'Department', minWidth: 100 },
@@ -30,7 +30,7 @@ export default function EmployeesArray(index) {
     const createData = (id,FirstName, LastName, Birthdate, Start, Department, Street, City, State, Zip) => {
         return {id, FirstName, LastName, Birthdate, Start, Department, Street, City, State, Zip };
     }
-
+    
     const rows = employees.map((employee) =>
 
         createData(
