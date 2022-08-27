@@ -1,21 +1,29 @@
-import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
-import states from "../data/states.json";
-import { useState } from "react";
 
-
-export default function ListItem({ items}) {
-
-
+export default function ListItem({ items,handleChange,employee,id,name,label }) {
+  
+  
   return (
-    
-      items.map((item, index) => (
-        <MenuItem key={index} value={item.name}  >
-          {item.name }
+    <TextField
+      fullWidth
+      select
+      id={id}
+      name={ name}
+      label={label}
+      onChange={handleChange}
+      {...console.log(employee)}
+      required
+      value={employee.name}
+      sx={{ textAlign: "left" }}
+    >
+      {items.map((item, index) => (
+        <MenuItem key={index} value={item.name}>
+          {item.name}
         </MenuItem>
-      ))
-    
+      ))}
+    </TextField>
+
 
   )
 }
