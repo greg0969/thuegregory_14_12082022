@@ -8,9 +8,10 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { useSelector } from 'react-redux';
+import uuid from 'react-uuid';
 
 
-export default function EmployeesArray(index) {
+export default function EmployeesArray({index}) {
 
     const employees = useSelector((state) => state.employees.employee);
 
@@ -83,11 +84,11 @@ export default function EmployeesArray(index) {
                             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                             .map((row) => {
                                 return (
-                                    <TableRow hover role="checkbox" tabIndex={-1} key={index}>
+                                    <TableRow hover role="checkbox" tabIndex={-1} key={uuid()}>
                                         {columns.map((column) => {
                                             const value = row[column.label];
                                             return (
-                                                <TableCell key={column.id}>
+                                                <TableCell key={uuid()}>
                                                     {value}
                                                 </TableCell>
                                             );
