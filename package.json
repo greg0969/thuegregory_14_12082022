@@ -13,6 +13,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "immer": "^9.0.15",
+    "modal-components": "^0.3.0",
     "node-sass": "^7.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",

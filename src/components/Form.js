@@ -11,7 +11,7 @@ import departments from "../data/departments.json";
 import ListItem from "./ListItem";
 
 
-function Form({ setVisible, index }) {
+function Form({ setShow, index }) {
 
   const dispatch = useDispatch();
   const [employee, setEmployee] = useState([]);
@@ -28,11 +28,9 @@ function Form({ setVisible, index }) {
       id: index,
       ...employee,
     };
-    setVisible(true);
+    setShow(true);
     dispatch(addEmployee(data));
   }
-  // let date = new Date().toISOString().substr(0, 10);
-
   return (
     <Box
       id="form"
@@ -126,7 +124,7 @@ function Form({ setVisible, index }) {
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-        <ListItem id={"State"} items={states} handleChange={handleChange} employee={employee} name={"State"} label={"State"}/>
+        <ListItem id="State" items={states} handleChange={handleChange} employee={employee} name="State" label="State"/>
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField

@@ -1,18 +1,19 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import ConfirmModal from "../components/ConfirmModal";
+// import { Link } from "react-router-dom";
+import SimpleModal from "../components/SimpleModal";
 import Form from "../components/Form"
 import Header from "../components/Header";
 
 function CreateEmployee() {
 
-    const [visible, setVisible] = useState(false);
+    const [show, setShow] = useState(false);
+    console.log(show)
 
     return (
         <div>
             <Header />
-            <Form visible={visible} setVisible={setVisible} />
-            {visible === true &&<ConfirmModal setVisible={setVisible}  />}
+            <Form show={show} setShow={setShow} />
+            <SimpleModal show={show} setShow={setShow}  />
         </div>
     )
 }
